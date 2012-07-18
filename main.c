@@ -12,7 +12,10 @@
 #include "main.h"
 // ----------  END  ----------------------------------------------------------------
 
+// *********************************************************************************
+// *****	Global Variables	 											********
 int v_i2c_device, v_uart_device;
+// ----------  END  ----------------------------------------------------------------
 
 // *********************************************************************************
 // *****	Main															********
@@ -23,7 +26,6 @@ int main (int argc, char **argv)
 // *********************************************************************************
 // *****	Variable Declaratins 											********
 	int v_returnvalue;
-	
 	pthread_t main_thread_ID;
 	pthread_t gps_thread_ID;
 	pthread_t alt_thread_ID;
@@ -34,10 +36,11 @@ int main (int argc, char **argv)
 	pthread_t hb_thread_ID;
 // ----------  END  ----------------------------------------------------------------
 
+	// Set system CPU frequency
 	system("cpufreq-set -f 600MHz");
 	
 // *********************************************************************************
-// *****	Initalize GPIO pins (function calls)							********
+// *****	Initalize GPIO pins												********
 	system("echo 147 > /sys/class/gpio/export");
 	system("echo out > /sys/class/gpio/gpio147/direction");
 	system("echo 0 > /sys/class/gpio/gpio147/value");
@@ -137,8 +140,6 @@ void *main_thread(void *ptr)
 // ----------  END  ----------------------------------------------------------------
 
 	SDL_Init(SDL_INIT_EVERYTHING);
-	
-//	system("rm /home/root/Programs/results");
 
 	gettimeofday(&start,NULL);
 	gettimeofday(&start2,NULL);
