@@ -3,7 +3,7 @@
 // *****	Date:		10 February 2012									********
 // *****	File Name: 	hb.c												********
 // *****																	********
-// *****	The hb.c file contains all the functions necessary to 		********
+// *****	The hb.c file contains all the functions necessary to 			********
 // *****	initialize, read, and calculate himidity.						********
 // *********************************************************************************
 // *****             Formated for Monospaced Type							********
