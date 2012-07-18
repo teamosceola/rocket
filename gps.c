@@ -43,7 +43,9 @@ void *GPS_Thread(void *ptr)
 	unsigned char **NMEA_string;
 	int *string_ID;
 // ----------  END  ----------------------------------------------------------------
-	//Init_GPS();
+
+	Init_GPS();
+
 // *********************************************************************************
 // *****	Main Loop of GPS_Thread											********
 	for(;;)
@@ -205,13 +207,13 @@ void Init_GPS(void)
 {
 	Wake_GPS();
 
-	//unsigned char *v_rate = malloc (sizeof (unsigned char) * (2));
-	//v_rate[0] = 0x01;
-	//v_rate[1] = 0xF4;
-	//Set_GPS_Rate(v_rate);
-	//free(v_rate);
-	//if(!Check_ACK()) printf("Set_GPS_Rate() Not Acknowledged!\n");
-/*	
+	unsigned char *v_rate = malloc (sizeof (unsigned char) * (2));
+	v_rate[0] = 0x01;
+	v_rate[1] = 0xF4;
+	Set_GPS_Rate(v_rate);
+	free(v_rate);
+	if(!Check_ACK()) printf("Set_GPS_Rate() Not Acknowledged!\n");
+	
 	Set_Navigation_Mode(PORTABLE);
 	if(!Check_ACK()) printf("Set_Navigation_Mode() Not Acknowledged!\n");
 	
@@ -256,7 +258,7 @@ void Init_GPS(void)
 	
 	Save_Current_Config();
 	if(!Check_ACK()) printf("Save_Current_Config() Not Acknowledged!\n");
-*/
+
 	return;
 }
 // ----------  END  ----------------------------------------------------------------
