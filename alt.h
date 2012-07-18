@@ -27,11 +27,8 @@
 // *********************************************************************************
 // *****	Constants			 											********
 // *********************************************************************************
-#define ALT_ADDRESS		0xEE
-
+#define ALT_ADDRESS				0xEE
 #define LAUNCH_THRESHOLD  		-5
-
-
 // ----------  END  Constants  -----------------------------------------------------
 
 
@@ -94,13 +91,10 @@ void Read_Pressure(alt_struct *);
 void Calculate_Apt_Temperature(alt_struct *);
 void Calculate_Pressure(alt_struct *);
 void Calculate_Altitude(alt_struct *);
-
 void Calculate_FR(alt_struct *);
 void Calculate_FRa(alt_struct *);
 void Calculate_FRma(alt_struct *);
-
 void Set_Status(alt_struct *);
-
 double gettimediff(struct timeval *, struct timeval *, double);
 
 // --------  END  Supporting Functions Prototypes-----------------------------------
